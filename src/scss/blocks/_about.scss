@@ -1,40 +1,48 @@
 .about {
 	position: relative;
+	margin: 0 auto;
+	max-width: 1605px;
+	@include section_line;
+	&::after {
+		right: 80px;
+		bottom: -122px;
+		z-index: 2;
+	}
 
 	&__wrapper {
+		position: relative;
 		margin: 0 auto;
 		padding-left: 150px;
+		padding-bottom: 144px;
 	}
 
 	&__title {
 		margin-top: 143px;
-		span {
-			color: $main-color;
-		}
-	}
-
-	&__descr {
-		margin-top: 41px;
-		font-weight: 400;
-		line-height: 1.44;
 	}
 
 	&__items {
-		margin-top: 81px;
+		margin-top: 61px;
 		display: flex;
+		flex-wrap: wrap;
 	}
 
 	.item {
+		margin-top: 20px;
 		width: 336px;
 
 		&__icon {
 			position: relative;
+			height: 75px;
+
+			img {
+				height: 100%;
+			}
 			&::before {
 				content: '';
 				position: absolute;
 				z-index: -1;
 				top: 50%;
-				transform: translateY(-80%);
+				transform: translateY(-50%);
 				width: 238px;
 				height: 13px;
 				background-color: $main-color;
@@ -57,5 +65,10 @@
 				color: $main-color;
 			}
 		}
+	}
+	&__vertical-text {
+		right: 40px;
+		top: 0;
+		height: 321px;
 	}
 }

@@ -22,3 +22,13 @@
 		background-color: $main-color;
 	}
 }
+
+@mixin section_line {
+	&::after {
+		content: '';
+		position: absolute;
+		width: 3px;
+		height: 264px;
+		background-color: $main-color;
+	}
+}

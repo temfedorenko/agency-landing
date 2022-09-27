@@ -1,0 +1,44 @@
+.services {
+	padding-top: 123px;
+	position: relative;
+	margin: 0 auto;
+	max-width: 1605px;
+	background-color: #f8fafa;
+
+	&__wrapper {
+		position: relative;
+		margin: 0 auto;
+		padding-left: 150px;
+		padding-bottom: 144px;
+	}
+
+	&__items {
+		margin-top: 51px;
+		display: flex;
+		flex-wrap: wrap;
+	}
+
+	.item {
+		margin-top: 80px;
+		width: 336px;
+
+		&__title {
+			margin-top: 30px;
+			font-size: 36px;
+			font-weight: 600;
+			line-height: 30px;
+			text-transform: uppercase;
+		}
+
+		&__descr {
+			margin-top: 22px;
+		}
+		&__btn {
+			margin-top: 52px;
+			border: 2px solid $black-color;
+			span {
+				color: $black-color;
+			}
+		}
+	}
+}

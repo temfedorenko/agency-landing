@@ -10,13 +10,16 @@
 	color: $black-color;
 }
 
-.container {
-	position: relative;
-	max-width: 1605px;
-	margin: 0 auto;
-}
+// .container {
+// 	position: relative;
+// 	max-width: 1605px;
+// 	margin: 0 auto;
+// }
 
 @import 'blocks/promo';
 @import 'blocks/title';
 @import 'blocks/buttons';
 @import 'blocks/about';
+@import 'blocks/vertical-text';
+@import 'blocks/description';
+@import 'blocks/services.scss';
