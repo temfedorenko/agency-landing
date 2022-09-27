@@ -6,7 +6,8 @@
 	background: url(../img/BG_image.jpg) center (center/cover) no-repeat;
 	@include section_line;
 	&::after {
-		transform: translate(70px, 44%);
+		left: 80px;
+		bottom: -122px;
 	}
 
 	&__left-overlay {

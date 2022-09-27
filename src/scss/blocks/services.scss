@@ -1,9 +1,15 @@
 .services {
 	padding-top: 123px;
 	position: relative;
-	margin: 0 auto;
 	max-width: 1605px;
+	margin: 0 auto;
+
 	background-color: #f8fafa;
+	@include section_line;
+	&::after {
+		left: 80px;
+		bottom: -142px;
+	}
 
 	&__wrapper {
 		position: relative;
@@ -22,6 +28,15 @@
 		margin-top: 80px;
 		width: 336px;
 
+		&__icon {
+			svg {
+				height: 52px;
+				path {
+					fill: $black-color;
+				}
+			}
+		}
+
 		&__title {
 			margin-top: 30px;
 			font-size: 36px;
@@ -36,8 +51,24 @@
 		&__btn {
 			margin-top: 52px;
 			border: 2px solid $black-color;
+
 			span {
 				color: $black-color;
+			}
+
+			&:hover {
+				border-color: $main-color;
+				span {
+					color: $main-color;
+					&::after {
+						right: -56px;
+						width: 57px;
+						background-color: $black-color;
+					}
+					&::before {
+						background-color: $black-color;
+					}
+				}
 			}
 		}
 	}
