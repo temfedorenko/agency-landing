@@ -1,0 +1,24 @@
+@mixin before_circle {
+	&::before {
+		content: '';
+		position: absolute;
+		left: -28px;
+		width: 12px;
+		height: 12px;
+		border-radius: 50%;
+		background-color: $main-color;
+	}
+}
+
+@mixin after_line {
+	&::after {
+		content: '';
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		right: -87px;
+		width: 62px;
+		height: 2px;
+		background-color: $main-color;
+	}
+}
