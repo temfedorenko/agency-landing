@@ -3,18 +3,123 @@
 	max-width: 1605px;
 	margin: 0 auto;
 	padding-top: 120px;
-	.button {
-		position: relative;
-		z-index: 2;
-		display: block;
-		width: 216px;
-		height: 64px;
-		padding-top: 24px;
-		border: 2px solid $white-color;
-		border-radius: 5px;
-		font-weight: bold;
-		text-transform: uppercase;
-		text-align: center;
-		line-height: 13px;
+	padding-bottom: 100px;
+	.submit__button {
+		margin-top: 17px;
+		border-color: $black-color;
+		padding: 0;
+		background-color: #fff;
+		cursor: pointer;
+		span {
+			color: $black-color;
+		}
+		&:hover {
+			transition: all 0.9s;
+			border-color: $main-color;
+			span {
+				transition: all 0.9s;
+				color: $main-color;
+				&::after {
+					transition: all 0.9s;
+					right: -56px;
+					width: 57px;
+					background-color: $black-color;
+				}
+				&::before {
+					transition: all 0.9s;
+					background-color: $black-color;
+				}
+			}
+		}
+	}
+	&__form {
+		margin: 0 auto;
+		width: 570px;
+		display: flex;
+		flex-direction: column;
+		input {
+			margin-bottom: 55px;
+			border: none;
+			border-bottom: 2px solid $main-color;
+			padding: 20px 29px;
+			&:focus {
+				outline-color: $main-color;
+			}
+			&::placeholder {
+				font-size: 24px;
+				color: rgba(42, 44, 47, 0.15);
+				font-weight: 500;
+				
+			}
+		}
+		
+	}
+	.divider {
+		width: 47px;
+  		height: 11px;
+		background-color: $black-color;
+		margin-top: -5px;
+		align-self: flex-end;
+
+	}
+
+	&__text {
+		margin: 0 auto;
+		margin-top: 116px;
+		max-width: 1200px;
+		display: flex;
+		font-weight: 700;
+		justify-content: space-between;
+		.site {
+			color: $main-color;
+		}
+	}
+
+	&__links {
+		display: flex;
+	}
+
+	&__link {
+		margin:0 10px;
+		&:first-child {
+			margin-left: 0;
+		}
+	
+		&:hover {
+			transition: all 0.6s;
+			color: $main-color;
+		}
+	}
+
+	&__social {
+		margin-left: 55px;
+		display: flex;
+
+		
+		a {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			margin-right: 7px;
+			width: 29px;
+			height: 29px;
+			background-color: #fff;
+			border-radius: 50%;
+			box-shadow: 0px 5px 24px 0 rgba(66, 64, 64, 0.12);
+			svg {
+				height: 15px;
+			}
+			&:last-child {
+				margin-right: 0;
+			}
+			&:hover {
+				svg {
+					path {
+						fill: $main-color;
+						transition: all 0.6s;
+					}
+				}
+			}
+		}
 	}
 }

@@ -50,6 +50,7 @@
 		}
 		&__btn {
 			margin-top: 52px;
+			transition: all 0.9s;
 			border-color: $black-color;
 
 			span {
@@ -57,15 +58,19 @@
 			}
 
 			&:hover {
+				transition: all 0.9s;
 				border-color: $main-color;
 				span {
+					transition: all 0.9s;
 					color: $main-color;
 					&::after {
+						transition: all 0.9s;
 						right: -56px;
 						width: 57px;
 						background-color: $black-color;
 					}
 					&::before {
+						transition: all 0.9s;
 						background-color: $black-color;
 					}
 				}
