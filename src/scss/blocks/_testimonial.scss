@@ -98,6 +98,15 @@
 				background-color: $white-color;
 			}
 		}
+		&:hover {
+			span {
+				&::after {
+					transition: all 0.6s;
+					right: -55px;
+					width: 50px;
+				}
+			}
+		}
 	}
 
 	&__dots {

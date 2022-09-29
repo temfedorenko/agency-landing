@@ -11,6 +11,12 @@
 	text-transform: uppercase;
 	text-align: center;
 	line-height: 13px;
+	transition: all 0.9s;
+	transform: translateY(0%);
+	&:hover {
+		transform: translateY(6%);
+	}
+
 	span {
 		position: relative;
 		color: $white-color;

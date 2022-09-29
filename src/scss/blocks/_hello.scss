@@ -6,7 +6,9 @@
 	background: url(../img/hello_bg.jpeg) center (center/cover) no-repeat;
 	@include section_line;
 	&::after {
-		right: 50px;
+		bottom: -100px;
+		right: 52px;
+		height: 206px;
 	}
 	&__overlay {
 		width: 100%;
@@ -40,6 +42,24 @@
 			}
 			&::before {
 				background-color: $white-color;
+			}
+		}
+		&:hover {
+			transition: all 0.9s;
+			border-color: $white-color;
+			span {
+				transition: all 0.9s;
+				color: $white-color;
+				&::after {
+					transition: all 0.9s;
+					right: -58px;
+					width: 50px;
+					background-color: $main-color;
+				}
+				&::before {
+					transition: all 0.9s;
+					background-color: $main-color;
+				}
 			}
 		}
 	}

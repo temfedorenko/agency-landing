@@ -56,9 +56,16 @@
 				font-weight: 400;
 				color: #404245;
 				text-transform: uppercase;
+				transition: all 0.8s;
+				&:hover {
+					color: $white-color;
+				}
 
 				&:first-child {
 					color: $white-color;
+					&:hover {
+						color: $main-color;
+					}
 				}
 			}
 		}
@@ -84,6 +91,18 @@
 
 	&__btn {
 		margin-top: 110px;
+		&:hover {
+			border-color: $main-color;
+			span {
+				transition: all 0.9s;
+				color: $main-color;
+				&::after {
+					transition: all 0.9s;
+					right: -58px;
+					width: 50px;
+				}
+			}
+		}
 	}
 
 	&__uxui {
