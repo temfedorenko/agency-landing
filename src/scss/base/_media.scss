@@ -2,53 +2,99 @@
 	.promo {
 		.header {
 			.menu {
-				margin-left: 318px;
+				.menu__list {
+					margin-right: 97px;
+				}
 			}
 		}
+
 		&__uxui {
 			margin-left: 103px;
 		}
 	}
+	
 }
 
 @media (max-width: 1199px) {
 	.promo {
 		padding-left: 15px;
+
 		&__wrapper {
 			max-width: 756px;
 			padding-left: 119px;
 		}
+
 		.header {
 			.menu {
-				margin-left: 286px;
+				position: fixed;
+				z-index: 10;
+				padding-top: 60px;
+				padding-bottom: 20px;
+				top: 0;
+				left: 0;
+				background-color: rgba(5, 250, 184, 0.89);
+				display: none;
+				flex-direction: column;
+				width: 54%;
+				height: 100vh;
+
+				&__list {
+					position: relative;
+					display: block;
+					width: 100%;
+					margin-right: 0;
+				}
+
+				&__item {
+					font-size: 50px;
+					text-align: center;
+					.white {
+						color: #404245;
+						&:hover {
+							color: $white-color;
+						}
+					}
+				}
 			}
 		}
+
 		&__uxui {
 			height: 100px;
 			margin-left: 90px;
 		}
+
 		&__ux,
 		&__ui {
 			font-size: 123px;
 		}
+
+		.burger-menu {
+			display: flex;
+			cursor: pointer;
+		}
+		// .button, .title {
+		// 	z-index: -1;
+		// }
 	}
+
 }
 
 @media (max-width: 991px) {
 	.promo {
 		padding-left: 15px;
+
 		&__wrapper {
 			max-width: 720px;
 			padding-left: 110px;
 		}
+
 		.header {
-			.menu {
-				display: none;
-			}
+
 			&__text {
 				margin-left: 5px;
 			}
 		}
+
 		&__uxui {
 			height: 91px;
 			margin-left: 60px;
@@ -58,6 +104,7 @@
 				height: 30px;
 			}
 		}
+
 		&__ux,
 		&__ui {
 			font-size: 96px;
@@ -66,7 +113,39 @@
 }
 
 @media (max-width: 767px) {
+	.promo {
+		padding-left: 15px;
+
+		&__wrapper {
+			padding-left: 60px;
+		}
+
+		&__title {
+			margin-right: 7px;
+		}
+		
+		&__uxui {
+			height: 86px;
+			margin-left: 30px;
+
+			span {
+				width: 24px;
+				height: 24px;
+			}
+		}
+
+		&__ux,
+		&__ui {
+			font-size: 83px;
+		}
+	}
+
+	.title {
+		font-size: 58px;
+		span {
+			font-size: 58px;
+		}
+	}
 }
 
-@media (max-width: 575px) {
-}
+@media (max-width: 575px) {}
