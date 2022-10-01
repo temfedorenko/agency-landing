@@ -78,19 +78,16 @@
 				&:hover {
 					color: $white-color;
 				}
-
 			}
 		}
-
-
 	}
 
 	.burger-menu {
+		display: none;
 		position: absolute;
 		z-index: 5;
 		top: 55px;
 		right: 50px;
-		display: none;
 		flex-direction: column;
 		justify-content: space-between;
 		width: 29px;
@@ -145,6 +142,7 @@
 		height: 110px;
 		bottom: 0;
 		margin-left: 170px;
+		overflow: hidden;
 
 		span {
 			display: inline-block;
@@ -158,6 +156,33 @@
 	&__ui {
 		display: inline-block;
 		font-size: 152px;
+		font-weight: 900;
+		line-height: 115px;
+		color: $white-color;
+	}
+
+	&__uxui_mobile {
+		display: none;
+		position: absolute;
+		height: 86px;
+		width: 200px;
+		bottom: 0;
+		left: 50%;
+		transform: translateX(-50%);
+		overflow: hidden;
+
+		span {
+			display: inline-block;
+			width: 18px;
+			height: 18px;
+			background-color: $main-color;
+		}
+	}
+
+	&__ux_mobile,
+	&__ui_mobile {
+		display: inline-block;
+		font-size: 71px;
 		font-weight: 900;
 		line-height: 115px;
 		color: $white-color;

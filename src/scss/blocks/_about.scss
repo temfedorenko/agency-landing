@@ -1,5 +1,7 @@
 .about {
 	position: relative;
+	padding-top: 143px;
+	padding-bottom: 144px;
 	margin: 0 auto;
 	max-width: 1605px;
 	@include section_line;
@@ -13,11 +15,6 @@
 		position: relative;
 		margin: 0 auto;
 		padding-left: 150px;
-		padding-bottom: 144px;
-	}
-
-	&__title {
-		margin-top: 143px;
 	}
 
 	&__items {

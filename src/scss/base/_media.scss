@@ -12,7 +12,6 @@
 			margin-left: 103px;
 		}
 	}
-	
 }
 
 @media (max-width: 1199px) {
@@ -25,15 +24,16 @@
 		}
 
 		.header {
+			z-index: 10;
+
 			.menu {
 				position: fixed;
-				z-index: 10;
+				display: none;
 				padding-top: 60px;
 				padding-bottom: 20px;
 				top: 0;
 				left: 0;
-				background-color: rgba(5, 250, 184, 0.89);
-				display: none;
+				background-color: $black-color;
 				flex-direction: column;
 				width: 54%;
 				height: 100vh;
@@ -49,11 +49,14 @@
 					font-size: 50px;
 					text-align: center;
 					.white {
-						color: #404245;
+						color: $main-color;
 						&:hover {
 							color: $white-color;
 						}
 					}
+				}
+				&__link {
+					color: $main-color;
 				}
 			}
 		}
@@ -71,12 +74,23 @@
 		.burger-menu {
 			display: flex;
 			cursor: pointer;
+			z-index: 11;
 		}
-		// .button, .title {
+		// .button,
+		// .title {
 		// 	z-index: -1;
 		// }
 	}
 
+	.descr {
+		max-width: 740px;
+	}
+
+	.about {
+		.item {
+			width: 251px;
+		}
+	}
 }
 
 @media (max-width: 991px) {
@@ -89,7 +103,6 @@
 		}
 
 		.header {
-
 			&__text {
 				margin-left: 5px;
 			}
@@ -110,20 +123,32 @@
 			font-size: 96px;
 		}
 	}
+	.about {
+		&__wrapper {
+			padding-left: 90px;
+			padding-right: 75px;
+		}
+		&__items {
+			justify-content: center;
+		}
+	}
 }
 
 @media (max-width: 767px) {
 	.promo {
-		padding-left: 15px;
+		&::after {
+			height: 150px;
+			bottom: -70px;
+		}
 
 		&__wrapper {
-			padding-left: 60px;
+			padding-left: 45px;
 		}
 
 		&__title {
 			margin-right: 7px;
 		}
-		
+
 		&__uxui {
 			height: 86px;
 			margin-left: 30px;
@@ -146,6 +171,98 @@
 			font-size: 58px;
 		}
 	}
+	.vertical-text {
+		display: none;
+	}
+	.about {
+		&::after {
+			height: 150px;
+			bottom: -75px;
+		}
+		padding-top: 80px;
+		padding-bottom: 80px;
+		.item {
+			width: 365px;
+		}
+	}
 }
 
-@media (max-width: 575px) {}
+@media (max-width: 575px) {
+	.promo {
+		padding-left: 15px;
+		&::after {
+			display: none;
+		}
+		.header {
+			.menu {
+				width: 100%;
+			}
+		}
+
+		&__left-overlay {
+			width: 100%;
+		}
+		&__right-overlay {
+			display: none;
+		}
+
+		.burger-menu {
+			z-index: 20;
+			right: 30px;
+			span {
+				background-color: $main-color;
+			}
+		}
+
+		&__wrapper {
+			padding-left: 5px;
+		}
+
+		.title {
+			justify-content: center;
+			font-size: 40px;
+			color: $white-color;
+			span {
+				font-size: 30px;
+			}
+		}
+
+		&__uxui_mobile {
+			display: inline-block;
+		}
+	}
+
+	.title {
+		font-size: 58px;
+		justify-content: center;
+		span {
+			font-size: 58px;
+		}
+	}
+
+	.about {
+		padding-top: 50px;
+		&::after {
+			display: none;
+		}
+		&__wrapper {
+			padding: 10px;
+		}
+		&__items {
+			margin-top: 40px;
+		}
+
+		.item {
+			margin-top: 30px;
+			&__title {
+				margin-top: 15px;
+			}
+			&__descr {
+				margin-top: 15px;
+			}
+		}
+	}
+	.descr {
+		margin-top: 20px;
+	}
+}
