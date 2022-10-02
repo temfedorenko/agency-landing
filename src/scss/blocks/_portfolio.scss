@@ -21,19 +21,25 @@
 		font-weight: 600;
 	}
 
-	&__content .all {
-		@include portfolio_content;
+	&__content {
+		.all {
+			@include portfolio_content;
+		}
 	}
 
-	&__content .graphic-desing,
-	.logo-branding {
-		@include portfolio_content;
-		grid-template: repeat(1, 350px) / repeat(3, 350px);
+	&__content {
+		.graphic-desing,
+		.logo-branding {
+			@include portfolio_content;
+			grid-template: 350px / repeat(3, 350px);
+		}
 	}
 
-	&__content .uiux-design {
-		@include portfolio_content;
-		grid-template: repeat(1, 350px) / repeat(2, 350px);
+	&__content {
+		.uiux-design {
+			@include portfolio_content;
+			grid-template: repeat(1, 350px) / repeat(2, 350px);
+		}
 	}
 
 	&__image {

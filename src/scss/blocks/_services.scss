@@ -1,5 +1,6 @@
 .services {
 	padding-top: 123px;
+	padding-bottom: 144px;
 	position: relative;
 	max-width: 1605px;
 	margin: 0 auto;
@@ -15,7 +16,6 @@
 		position: relative;
 		margin: 0 auto;
 		padding-left: 150px;
-		padding-bottom: 144px;
 	}
 
 	&__items {
@@ -26,7 +26,7 @@
 
 	.item {
 		margin-top: 80px;
-		width: 336px;
+		max-width: 336px;
 
 		&__icon {
 			svg {
