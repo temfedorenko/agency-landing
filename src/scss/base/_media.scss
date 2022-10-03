@@ -55,15 +55,18 @@
 
 			.menu {
 				position: fixed;
-				display: none;
+				display: flex;
 				padding-top: 60px;
 				padding-bottom: 20px;
 				top: 0;
-				left: 0;
+				left: -100%;
 				background-color: $black-color;
 				flex-direction: column;
 				width: 54%;
 				height: 100vh;
+				transition: all 0.8s;
+
+				
 
 				&__list {
 					position: relative;
@@ -86,6 +89,12 @@
 					color: $main-color;
 				}
 			}
+
+			.active {
+				left: 0;
+			}
+
+			
 		}
 
 		&__uxui {
