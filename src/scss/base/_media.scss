@@ -149,6 +149,15 @@
 		&__wrapper {
 			grid-template-columns: 580px 340px;
 			column-gap: 15px;
+			justify-content: center;
+		}
+
+		&__header {
+			font-size: 55px;
+			&::before {
+				width: 129px;
+				bottom: 2px;
+			}
 		}
 	}
 }
@@ -227,18 +236,35 @@
 	}
 
 	.testimonial {
-		padding-top: 90px;
+		padding-top: 80px;
 		&__wrapper {
-			grid-template-rows: 1fr 566px;
+			padding-right: 15px;
+			grid-template-rows: 50px 1fr 160px;
 			row-gap: 20px;
-			grid-template-columns: 700px;
+			grid-template-columns: auto;
+			justify-content: center;
 		}
 
-		// &__content {
-		// }
+		&__content {
+			grid-row: 2 / 3;
+			grid-column: 1 / 2;
+		}
+ 
+		&__header {
+			width: 379px;
+			margin: 0 auto;
+			grid-row: 1 / 2;
+			grid-column: 1 / 2;
+		}
 
-		&__right-block {
-			grid-column: 1/2;
+		&__buttons_desctop {
+			display: none;
+		}
+
+		&__buttons_mobile {
+			display: block;
+			grid-row: 3 / 4;
+			grid-column: 1 / 2;
 		}
 	}
 
@@ -307,8 +333,15 @@
 		}
 		padding-top: 80px;
 		padding-bottom: 80px;
+		&__items {
+			margin-top: 0;
+		}
 		.item {
+			margin-top: 65px;
 			width: 365px;
+			&__title, &__descr {
+				margin-top: 15px;
+			}
 		}
 	}
 
@@ -404,16 +437,23 @@
 		}
 
 		.title {
+			flex-direction: column;
 			justify-content: center;
-			font-size: 40px;
-			color: $white-color;
+			font-size: 63px;
+			color: $main-color;
+			line-height: 24px;
 			span {
+				color: $white-color;
 				font-size: 30px;
+				margin-left: -78px;
 			}
 		}
 
 		&__uxui_mobile {
 			display: inline-block;
+		}
+		&__ux_mobile {
+			line-height: 122px;
 		}
 	}
 
@@ -433,19 +473,6 @@
 		}
 		&__wrapper {
 			padding: 10px;
-		}
-		&__items {
-			margin-top: 40px;
-		}
-
-		.item {
-			margin-top: 30px;
-			&__title {
-				margin-top: 15px;
-			}
-			&__descr {
-				margin-top: 15px;
-			}
 		}
 	}
 
@@ -499,6 +526,46 @@
 			}
 			.uiux-design {
 				grid-template: repeat(2, 300px) / 300px;
+			}
+		}
+	}
+
+	.testimonial {
+		&__wrapper {
+			padding-right: 15px;
+			grid-template-rows: 50px 1fr 160px;
+			row-gap: 20px;
+			grid-template-columns: auto;
+		}
+
+		&__content {
+			max-height: 380px;
+			padding: 14%;
+			&-quote {
+				width: 25px;
+				height: 17px;
+			}
+			&-descr {
+				margin-top: 30px;
+				font-size: 20px;
+			}
+			&-author {
+				font-size: 16px;
+				span {
+					font-size: 16px;
+				}
+			}
+		}
+ 
+		&__header {
+			width: 260px;
+			font-size: 38px;
+			margin: 0 auto;
+			grid-row: 1 / 2;
+			grid-column: 1 / 2;
+			&::before {
+				width: 88px;
+				bottom: 8px;
 			}
 		}
 	}
