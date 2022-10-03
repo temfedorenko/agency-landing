@@ -14,7 +14,7 @@
 	&__content {
 		padding: 120px 76px 0 160px;
 		position: relative;
-		width: 770px;
+		width: 100%;
 		height: 566px;
 		grid-column: 1/2;
 		&-descr {
@@ -81,7 +81,7 @@
 	&__buttons {
 		margin-top: 90px;
 		padding-top: 74px;
-		width: 380px;
+		width: 100%;
 		height: 280px;
 		background-color: $main-color;
 	}

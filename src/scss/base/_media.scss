@@ -30,6 +30,15 @@
 			}
 		}
 	}
+
+	.testimonial {
+		&__wrapper {
+			grid-template-columns: 670px 440px;
+		}
+		.vertical-text {
+			display: none;
+		}
+	}
 }
 
 @media (max-width: 1199px) {
@@ -131,9 +140,15 @@
 				grid-template: 350px / repeat(3, 320px);
 			}
 			.uiux-design {
-				@include portfolio_content;
 				grid-template: repeat(1, 320px) / repeat(2, 320px);
 			}
+		}
+	}
+
+	.testimonial {
+		&__wrapper {
+			grid-template-columns: 580px 340px;
+			column-gap: 15px;
 		}
 	}
 }
@@ -194,6 +209,9 @@
 			margin-left: 90px;
 			padding-right: 75px;
 		}
+		&__tabs {
+			margin-left: 90px;
+		}
 		&__content {
 			.all {
 				grid-template: repeat(3, 250px) / repeat(6, 125px);
@@ -203,9 +221,40 @@
 				grid-template: 250px / repeat(3, 250px);
 			}
 			.uiux-design {
-				@include portfolio_content;
 				grid-template: repeat(1, 250px) / repeat(2, 250px);
 			}
+		}
+	}
+
+	.testimonial {
+		padding-top: 90px;
+		&__wrapper {
+			grid-template-rows: 1fr 566px;
+			row-gap: 20px;
+			grid-template-columns: 700px;
+		}
+
+		// &__content {
+		// }
+
+		&__right-block {
+			grid-column: 1/2;
+		}
+	}
+
+	.hello {
+		margin-top: 90px;
+	}
+
+	.footer {
+		padding-top: 100px;
+
+		&__text {
+			flex-direction: column-reverse;
+			align-items: center;
+		}
+		&__rights {
+			margin-top: 15px;
 		}
 	}
 }
@@ -302,8 +351,22 @@
 				}
 			}
 			.uiux-design {
-				@include portfolio_content;
 				grid-template: repeat(1, 250px) / repeat(2, 250px);
+			}
+		}
+	}
+
+	.hello {
+		padding-top: 50px;
+		padding-bottom: 80px;
+		&::after {
+			height: 150px;
+			bottom: -70px;
+		}
+		.title {
+			font-size: 55px;
+			span {
+				font-size: 55px;
 			}
 		}
 	}
@@ -400,5 +463,68 @@
 	}
 	.descr {
 		margin-top: 20px;
+	}
+
+	.portfolio {
+		padding-top: 50px;
+
+		&__title,
+		&__descr {
+			margin-left: 10px;
+			padding-right: 10px;
+		}
+
+		&__tabs {
+			flex-direction: column;
+			height: 150px;
+			margin-top: 40px;
+		}
+
+		&__content {
+			.all {
+				grid-template: repeat(7, 300px) / 300px;
+				&:last-child {
+					grid-column-start: 1 / 2;
+				}
+			}
+			.graphic-desing,
+			.logo-branding {
+				grid-template: repeat(3, 300px) / 300px;
+				.portfolio__image {
+					grid-column: span 1;
+					&:last-child {
+						grid-column: 1 / 2;
+					}
+				}
+			}
+			.uiux-design {
+				grid-template: repeat(2, 300px) / 300px;
+			}
+		}
+	}
+
+	.hello {
+		&::after {
+			display: none;
+		}
+	}
+
+	.footer {
+		padding-top: 50px;
+
+		&__links {
+			flex-direction: column;
+			align-items: center;
+		}
+
+		&__social {
+			margin-top: 25px;
+			margin-left: 0;
+		}
+
+		&__rights {
+			margin-top: 40px;
+			text-align: center;
+		}
 	}
 }
