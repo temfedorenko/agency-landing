@@ -21,6 +21,9 @@
 		font-weight: 600;
 		padding-right: 20px;
 	}
+	&__tab {
+		cursor: pointer;
+	}
 
 	&__content {
 		.all {
@@ -105,5 +108,9 @@
 	}
 	.active-tab {
 		color: $main-color;
+	}
+
+	.active-tab-content {
+		display: grid;
 	}
 }

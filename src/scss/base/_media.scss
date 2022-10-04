@@ -17,7 +17,6 @@
 		&__content {
 			.all {
 				grid-template: repeat(3, 350px) / repeat(6, 175px);
-				// justify-items: center;
 				.portfolio__image {
 					grid-column: span 2;
 					&:nth-child(7) {
@@ -64,9 +63,7 @@
 				flex-direction: column;
 				width: 54%;
 				height: 100vh;
-				transition: all 0.8s;
-
-				
+				transition: all 0.8s cubic-bezier(0.8, 0.5, 0.2, 1);
 
 				&__list {
 					position: relative;
@@ -86,6 +83,10 @@
 					}
 				}
 				&__link {
+					// display: block;
+					&:hover {
+						transform: scale(1.2);
+					}
 					color: $main-color;
 				}
 			}
@@ -93,8 +94,6 @@
 			.active {
 				left: 0;
 			}
-
-			
 		}
 
 		&__uxui {
@@ -112,10 +111,6 @@
 			cursor: pointer;
 			z-index: 11;
 		}
-		// .button,
-		// .title {
-		// 	z-index: -1;
-		// }
 	}
 
 	.descr {
@@ -258,7 +253,7 @@
 			grid-row: 2 / 3;
 			grid-column: 1 / 2;
 		}
- 
+
 		&__header {
 			width: 379px;
 			margin: 0 auto;
@@ -348,7 +343,8 @@
 		.item {
 			margin-top: 65px;
 			width: 365px;
-			&__title, &__descr {
+			&__title,
+			&__descr {
 				margin-top: 15px;
 			}
 		}
@@ -565,7 +561,7 @@
 				}
 			}
 		}
- 
+
 		&__header {
 			width: 260px;
 			font-size: 38px;

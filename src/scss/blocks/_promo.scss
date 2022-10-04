@@ -61,10 +61,11 @@
 				font-weight: 400;
 				text-transform: uppercase;
 				transition: all 0.6s;
-
+				&:hover {
+					transform: scale(1.2);
+				}
 				.white {
 					color: $white-color;
-
 					&:hover {
 						color: $main-color;
 					}
@@ -97,20 +98,30 @@
 			width: 100%;
 			height: 3px;
 			background-color: $black-color;
-			transition: all 0.4;
+			transition: all 0.6s cubic-bezier(0.8, 0.5, 0.2, 1.4);
+		}
 
+		&:not(.burger-menu_active):hover {
+			span {
+				&:first-child,
+				&:last-child {
+					transform: scaleX(0.8);
+				}
+				&:nth-child(2) {
+					transform: scaleX(0.5);
+				}
+			}
 		}
 		&_active {
 			span {
 				&:first-child {
-					transform: rotate(45deg);
+					transform: translateY(300%) rotate(45deg);
 				}
 				&:nth-child(2) {
-					display: none;
+					opacity: 0;
 				}
 				&:last-child {
-					transform: translateY(-50%);
-					transform:translateY(-600%) rotate(-45deg) ;
+					transform: translateY(-300%) rotate(-45deg);
 				}
 			}
 		}
@@ -203,9 +214,6 @@
 		line-height: 115px;
 		color: $white-color;
 	}
-
-
-	
 }
 
 .show {
