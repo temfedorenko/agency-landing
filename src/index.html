@@ -4,7 +4,7 @@
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Document</title>
+		<title>Helali</title>
 		<link rel="stylesheet" href="/css/style.min.css" />
 	</head>
 
@@ -428,7 +428,7 @@ m-30 -349 c0 -10 -10 -15 -30 -15 -20 0 -30 5 -30 15 0 10 10 15 30 15 20 0
 		<!-- TESTIMONIAL -->
 		<section class="testimonial">
 			<div class="testimonial__wrapper">
-				<!-- <div class="testimonial__content">
+				<div class="testimonial__content">
 					<p class="testimonial__content-quote">
 						<img src="icons/quote.png" alt="quote" />
 					</p>
@@ -440,8 +440,8 @@ m-30 -349 c0 -10 -10 -15 -30 -15 -20 0 -30 5 -30 15 0 10 10 15 30 15 20 0
 
 					<div class="testimonial__overlay"></div>
 					<img src="img/client1.jpeg" class="testimonial__content-bg" alt="client" />
-				</div> -->
-				<!-- <div class="testimonial__content">
+				</div>
+				<div class="testimonial__content">
 					<p class="testimonial__content-quote">
 						<img src="icons/quote.png" alt="quote" />
 					</p>
@@ -453,7 +453,7 @@ m-30 -349 c0 -10 -10 -15 -30 -15 -20 0 -30 5 -30 15 0 10 10 15 30 15 20 0
 
 					<div class="testimonial__overlay"></div>
 					<img src="img/client2.jpeg" class="testimonial__content-bg" alt="client" />
-				</div> -->
+				</div>
 				<div class="testimonial__content">
 					<p class="testimonial__content-quote">
 						<img src="icons/quote.png" alt="quote" />
@@ -470,17 +470,17 @@ m-30 -349 c0 -10 -10 -15 -30 -15 -20 0 -30 5 -30 15 0 10 10 15 30 15 20 0
 				<div class="testimonial__header">Testimonial</div>
 				<div class="testimonial__buttons testimonial__buttons_desctop">
 					<a href="#" class="button testimonial__btn"><span>Find more</span></a>
-					<div class="testimonial__dots">
-						<span class="testimonial__dot"></span>
-						<span class="testimonial__dot active-dot"></span>
-						<span class="testimonial__dot"></span>
+					<div class="testimonial__dots testimonial__dots_desctop">
+						<span class="testimonial__dot testimonial__dot_desctop"></span>
+						<span class="testimonial__dot testimonial__dot_desctop"></span>
+						<span class="testimonial__dot testimonial__dot_desctop"></span>
 					</div>
 				</div>
 				<div class="testimonial__buttons testimonial__buttons_mobile">
-					<div class="testimonial__dots">
-						<span class="testimonial__dot"></span>
-						<span class="testimonial__dot active-dot"></span>
-						<span class="testimonial__dot"></span>
+					<div class="testimonial__dots testimonial__dots_mobile">
+						<span class="testimonial__dot testimonial__dot_mobile"></span>
+						<span class="testimonial__dot testimonial__dot_mobile"></span>
+						<span class="testimonial__dot testimonial__dot_mobile"></span>
 					</div>
 					<a href="#" class="button testimonial__btn"><span>Find more</span></a>
 				</div>
@@ -500,6 +500,7 @@ m-30 -349 c0 -10 -10 -15 -30 -15 -20 0 -30 5 -30 15 0 10 10 15 30 15 20 0
 				</p>
 			</div>
 			<div class="hello__overlay"></div>
+			
 		</section>
 
 		<!-- FOOTER -->
@@ -564,6 +565,39 @@ m-30 -349 c0 -10 -10 -15 -30 -15 -20 0 -30 5 -30 15 0 10 10 15 30 15 20 0
 				<div class="footer__vertical-text vertical-text"><a href="#">scroll to top</a></div>
 			</div>
 		</footer>
+
+		<div class="popup">
+			<div class="popup__wrapper">
+				<div class="popup__content">
+					<form class="footer__form" action="#">
+						<input
+							type="text"
+							name="subject"
+							class="footer__input"
+							placeholder="Subject"
+							required
+						/>
+						<input
+							type="email"
+							name="email"
+							class="footer__input"
+							placeholder="Your Email here"
+							required
+						/>
+						<input type="text" name="message" class="footer__input" placeholder="Drop Message" />
+						<div class="divider"></div>
+						<button type="submit" name="submit" class="button submit__button">
+							<span>send us</span>
+						</button>
+					</form>
+				</div>
+			</div>
+			<div class="popup__close">
+				<span></span>
+				<span></span>
+				<span></span>
+			</div>
+		</div>
 
 		<script src="js/script.js"></script>
 	</body>
