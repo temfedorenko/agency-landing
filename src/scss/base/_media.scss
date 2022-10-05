@@ -90,9 +90,10 @@
 				}
 
 				&__link {
-					// display: block;
+
 					&:hover {
 						transform: scale(1.2);
+						letter-spacing: 5px;
 					}
 
 					color: $main-color;
@@ -672,6 +673,7 @@
 	.modal {
 		padding-left: 30px;
 		padding-right: 50px;
+
 		&__content {
 			max-width: 400px;
 
@@ -689,7 +691,15 @@
 				}
 			}
 		}
+
 		.submit__button {
+			width: 90%;
+
+			span {
+				&::after {
+					content: none;
+				}
+			}
 		}
 	}
 }

@@ -1,177 +1,219 @@
-'use strict';
+"use strict";
 
-window.addEventListener('DOMContentLoaded', () => {
-	// BURGER MENU
+window.addEventListener("DOMContentLoaded", () => {
+  // BURGER MENU
 
-	const burgerMenu = document.querySelector('.burger-menu'),
-		menuContent = document.querySelector('.menu'),
-		menuItems = document.querySelectorAll('.menu__item');
+  const burgerMenu = document.querySelector(".burger-menu"),
+    menuContent = document.querySelector(".menu"),
+    menuItems = document.querySelectorAll(".menu__item"),
+    body = document.querySelector("body");
 
-	function openBurgerMenu() {
-		menuContent.classList.add('active');
-		burgerMenu.classList.add('burger-menu_active');
-		//  document.body.style.cssText = "overflow-y: hidden;";
-	}
+  function calcScrollbarWidth() {
+    const scrollWidth = window.innerWidth - body.clientWidth + "px";
 
-	function closeBurgerMenu() {
-		menuContent.classList.remove('active');
-		burgerMenu.classList.remove('burger-menu_active');
-		//  document.body.style.cssText = "overflow-y: visible;";
-	}
+    return scrollWidth;
+  }
 
-	burgerMenu.addEventListener('click', () => {
-		if (!menuContent.classList.contains('active')) {
-			openBurgerMenu();
-		} else {
-			closeBurgerMenu();
-		}
-	});
+  const scrollWidth = calcScrollbarWidth();
 
-	menuItems.forEach((item) => {
-		item.addEventListener('click', (e) => {
-			if (e.target && e.target.matches('.menu__link')) {
-				closeBurgerMenu();
-			}
-		});
-	});
+  function lockBody() {
+    body.style.overflow = "hidden";
+    body.style.marginRight = scrollWidth;
+  }
 
-	// SVG HOVER EFFECT
+  function unlockBody() {
+    setTimeout(() => {
+      body.style.overflow = "";
+      body.style.marginRight = "0";
+    }, 500);
+  }
 
-	const servicesButtons = document.querySelectorAll('.services__item .item__btn'),
-		icons = document.querySelectorAll('.item__icon svg path');
+  function openBurgerMenu() {
+    menuContent.classList.add("active");
+    burgerMenu.classList.add("burger-menu_active");
+    lockBody();
+  }
 
-	servicesButtons.forEach((servicesBtn, i) => {
-		servicesBtn.addEventListener('mouseenter', () => {
-			icons[i].style.fill = '#05fab8';
-			icons[i].style.transition = 'all 0.6s';
-		});
-	});
-	servicesButtons.forEach((servicesBtn, i) => {
-		servicesBtn.addEventListener('mouseleave', () => {
-			icons[i].style.fill = '#000';
-		});
-	});
+  function closeBurgerMenu() {
+    menuContent.classList.remove("active");
+    burgerMenu.classList.remove("burger-menu_active");
+    unlockBody();
+  }
 
-	// PORTFOLIO TABS Portfolio
+  burgerMenu.addEventListener("click", () => {
+    if (!menuContent.classList.contains("active")) {
+      openBurgerMenu();
+    } else {
+      closeBurgerMenu();
+    }
+  });
 
-	const tabsWrapper = document.querySelector('.portfolio__tabs'),
-		tabs = document.querySelectorAll('.portfolio__tab'),
-		tabsContent = document.querySelectorAll('.portfolio__content-item');
+  menuItems.forEach((item) => {
+    item.addEventListener("click", (e) => {
+      if (e.target && e.target.matches(".menu__link")) {
+        closeBurgerMenu();
+      }
+    });
+  });
 
-	hideTabsContent();
+  // SVG HOVER EFFECT
 
-	function hideTabsContent() {
-		tabsContent.forEach((tabContent) => {
-			tabContent.classList.remove('active-tab-content');
-		});
+  const servicesButtons = document.querySelectorAll(
+      ".services__item .item__btn"
+    ),
+    icons = document.querySelectorAll(".item__icon svg path");
 
-		tabs.forEach((tab) => {
-			tab.classList.remove('active-tab');
-		});
-	}
+  servicesButtons.forEach((servicesBtn, i) => {
+    servicesBtn.addEventListener("mouseenter", () => {
+      icons[i].style.fill = "#05fab8";
+      icons[i].style.transition = "all 0.6s";
+    });
+  });
+  servicesButtons.forEach((servicesBtn, i) => {
+    servicesBtn.addEventListener("mouseleave", () => {
+      icons[i].style.fill = "#000";
+    });
+  });
 
-	showTabContant();
+  // PORTFOLIO TABS Portfolio
 
-	function showTabContant(i = 0) {
-		tabsContent[i].classList.add('active-tab-content');
-		tabs[i].classList.add('active-tab');
-	}
+  const tabsWrapper = document.querySelector(".portfolio__tabs"),
+    tabs = document.querySelectorAll(".portfolio__tab"),
+    tabsContent = document.querySelectorAll(".portfolio__content-item");
 
-	tabsWrapper.addEventListener('click', (e) => {
-		if (e.target && e.target.matches('.portfolio__tab')) {
-			tabs.forEach((tab, i) => {
-				if (e.target === tab) {
-					hideTabsContent();
-					showTabContant(i);
-				}
-			});
-		}
-	});
+  function hideTabsContent() {
+    tabsContent.forEach((tabContent) => {
+      tabContent.classList.remove("active-tab-content");
+    });
 
-	// PORTFOLIO TABS Testimonial
+    tabs.forEach((tab) => {
+      tab.classList.remove("active-tab");
+    });
+  }
 
-	const dotsWrapperDesctop = document.querySelector('.testimonial__dots_desctop'),
-		dotsWrapperMobile = document.querySelector('.testimonial__dots_mobile'),
-		dotsDesctop = document.querySelectorAll('.testimonial__dot_desctop'),
-		dotsMobile = document.querySelectorAll('.testimonial__dot_mobile'),
-		testimonialContent = document.querySelectorAll('.testimonial__content');
+  hideTabsContent();
 
-	hideTestimonialContent();
+  function showTabContant(i = 0) {
+    tabsContent[i].classList.add("active-tab-content");
+    tabs[i].classList.add("active-tab");
+  }
 
-	function hideTestimonialContent() {
-		testimonialContent.forEach((item) => {
-			item.classList.remove('testimonial__content-active');
-		});
+  showTabContant();
 
-		dotsDesctop.forEach((dot) => {
-			dot.classList.remove('active-dot');
-		});
+  tabsWrapper.addEventListener("click", (e) => {
+    if (e.target && e.target.matches(".portfolio__tab")) {
+      tabs.forEach((tab, i) => {
+        if (e.target === tab) {
+          hideTabsContent();
+          showTabContant(i);
+        }
+      });
+    }
+  });
 
-		dotsMobile.forEach((dot) => {
-			dot.classList.remove('active-dot');
-		});
-	}
+  // PORTFOLIO TABS Testimonial
 
-	showTestimonialContent();
+  const dotsWrapperDesctop = document.querySelector(
+      ".testimonial__dots_desctop"
+    ),
+    dotsWrapperMobile = document.querySelector(".testimonial__dots_mobile"),
+    dotsDesctop = document.querySelectorAll(".testimonial__dot_desctop"),
+    dotsMobile = document.querySelectorAll(".testimonial__dot_mobile"),
+    testimonialContent = document.querySelectorAll(".testimonial__content");
 
-	function showTestimonialContent(i = 0) {
-		testimonialContent[i].classList.add('testimonial__content-active');
-		dotsDesctop[i].classList.add('active-dot');
-		dotsMobile[i].classList.add('active-dot');
-	}
+  function hideTestimonialContent() {
+    testimonialContent.forEach((item) => {
+      item.classList.remove("testimonial__content-active");
+    });
 
-	function addListener(wrapper, dots, dotsSelector) {
-		wrapper.addEventListener('click', (e) => {
-			if (e.target && e.target.matches(dotsSelector)) {
-				dots.forEach((dot, i) => {
-					if (e.target === dot) {
-						hideTestimonialContent();
-						showTestimonialContent(i);
-					}
-				});
-			}
-		});
-	}
+    dotsDesctop.forEach((dot) => {
+      dot.classList.remove("active-dot");
+    });
 
-	addListener(dotsWrapperDesctop, dotsDesctop, '.testimonial__dot_desctop');
-	addListener(dotsWrapperMobile, dotsMobile, '.testimonial__dot_mobile');
+    dotsMobile.forEach((dot) => {
+      dot.classList.remove("active-dot");
+    });
+  }
 
-	// MODAL
+  hideTestimonialContent();
 
-	const modal = document.querySelector('.modal'),
-		modalContent = document.querySelector('.modal__content'),
-		modalClose = document.querySelector('.modal__close'),
-		modalTrigger = document.querySelector('.hello__btn');
+  function showTestimonialContent(i = 0) {
+    testimonialContent[i].classList.add("testimonial__content-active");
+    dotsDesctop[i].classList.add("active-dot");
+    dotsMobile[i].classList.add("active-dot");
+  }
 
-	closeModal();
+  showTestimonialContent();
 
-	function closeModal() {
-		modal.classList.remove('show');
-		modalContent.classList.remove('show');
-	}
+  function addListener(wrapper, dots, dotsSelector) {
+    wrapper.addEventListener("click", (e) => {
+      if (e.target && e.target.matches(dotsSelector)) {
+        dots.forEach((dot, i) => {
+          if (e.target === dot) {
+            hideTestimonialContent();
+            showTestimonialContent(i);
+          }
+        });
+      }
+    });
+  }
 
-	function openModal() {
-		modal.classList.add('show');
-		modalContent.classList.add('show');
-	}
+  addListener(dotsWrapperDesctop, dotsDesctop, ".testimonial__dot_desctop");
+  addListener(dotsWrapperMobile, dotsMobile, ".testimonial__dot_mobile");
 
-	modalTrigger.addEventListener('click', (e) => {
-		e.preventDefault();
-		openModal();
-	});
+  // MODAL
 
-	modalClose.addEventListener('click', closeModal);
+  const modal = document.querySelector(".modal"),
+    modalContent = document.querySelector(".modal__content"),
+    modalClose = document.querySelector(".modal__close"),
+    modalTrigger = document.querySelector(".hello__btn");
 
-	document.body.addEventListener('keydown', (e) => {
-		if (e.code === 'Escape' && modal.classList.contains('show')) {
-			closeModal();
-		}
-	});
+  function closeModal() {
+    modal.classList.remove("show");
+    modalContent.classList.remove("show");
 
-	modal.addEventListener('click', (e) => {
-		if (!e.target.closest('.modal__content')) {
-			console.log(e.target);
-			closeModal();
-		}
-	});
+    unlockBody();
+  }
+
+  closeModal();
+
+  function openModal() {
+    modal.classList.add("show");
+    modalContent.classList.add("show");
+
+    lockBody();
+  }
+
+  modalTrigger.addEventListener("click", (e) => {
+    e.preventDefault();
+    openModal();
+  });
+
+  modalClose.addEventListener("click", closeModal);
+
+  body.addEventListener("keydown", (e) => {
+    if (e.code === "Escape" && modal.classList.contains("show")) {
+      closeModal();
+    }
+  });
+
+  modal.addEventListener("click", (e) => {
+    if (!e.target.closest(".modal__content")) {
+      closeModal();
+    }
+  });
+
+  //   SCROLL TOP (UP BUTTON)
+
+  const pageUp = document.querySelector(".page-up");
+
+  pageUp.addEventListener("click", (e) => {
+    e.preventDefault();
+
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: "smooth",
+    });
+  });
 });
