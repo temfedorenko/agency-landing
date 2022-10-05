@@ -115,13 +115,13 @@
 		&_active {
 			span {
 				&:first-child {
-					transform: translateY(300%) rotate(45deg);
+					transform: translateY(321%) rotate(45deg);
 				}
 				&:nth-child(2) {
 					opacity: 0;
 				}
 				&:last-child {
-					transform: translateY(-300%) rotate(-45deg);
+					transform: translateY(-313%) rotate(-45deg);
 				}
 			}
 		}
@@ -216,10 +216,10 @@
 	}
 }
 
-.show {
-	display: flex;
-}
+// .show {
+// 	display: flex;
+// }
 
-.hide {
-	display: none;
-}
+// .hide {
+// 	display: none;
+// }

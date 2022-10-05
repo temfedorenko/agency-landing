@@ -24,3 +24,37 @@
 		@include after_line;
 	}
 }
+
+.submit__button {
+	margin-top: 17px;
+	border-color: $black-color;
+	padding: 0;
+	background-color: #fff;
+	cursor: pointer;
+
+	span {
+		color: $black-color;
+	}
+
+	&:hover {
+		transition: all 0.9s;
+		border-color: $main-color;
+
+		span {
+			transition: all 0.9s;
+			color: $main-color;
+
+			&::after {
+				transition: all 0.9s;
+				right: -65px;
+				width: 50px;
+				background-color: $black-color;
+			}
+
+			&::before {
+				transition: all 0.9s;
+				background-color: $black-color;
+			}
+		}
+	}
+}

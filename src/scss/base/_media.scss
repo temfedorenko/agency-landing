@@ -90,7 +90,6 @@
 				}
 
 				&__link {
-
 					// display: block;
 					&:hover {
 						transform: scale(1.2);
@@ -667,6 +666,30 @@
 		&__rights {
 			margin-top: 40px;
 			text-align: center;
+		}
+	}
+
+	.modal {
+		padding-left: 30px;
+		padding-right: 50px;
+		&__content {
+			max-width: 400px;
+
+			form {
+				input {
+					padding: 15px;
+					border: none;
+					border-bottom: 2px solid $main-color;
+
+					&::placeholder {
+						font-size: 15px;
+						color: rgba(42, 44, 47, 0.15);
+						font-weight: 500;
+					}
+				}
+			}
+		}
+		.submit__button {
 		}
 	}
 }

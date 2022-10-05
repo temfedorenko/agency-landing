@@ -446,8 +446,8 @@ m-30 -349 c0 -10 -10 -15 -30 -15 -20 0 -30 5 -30 15 0 10 10 15 30 15 20 0
 						<img src="icons/quote.png" alt="quote" />
 					</p>
 					<p class="testimonial__content-descr">
-						Over the years, projects are always approached with enthusiasm,
-						care and a focus to deliver on-time and within the agreed budget
+						Over the years, projects are always approached with enthusiasm, care and a focus to
+						deliver on-time and within the agreed budget
 					</p>
 					<p class="testimonial__content-author">Yakubu Aiyegbeni, <span>logo branding</span></p>
 
@@ -500,29 +500,16 @@ m-30 -349 c0 -10 -10 -15 -30 -15 -20 0 -30 5 -30 15 0 10 10 15 30 15 20 0
 				</p>
 			</div>
 			<div class="hello__overlay"></div>
-			
 		</section>
 
 		<!-- FOOTER -->
 		<footer class="footer">
 			<div class="footer__wrapper">
 				<div class="footer__contacts">
-					<form class="footer__form" action="#">
-						<input
-							type="text"
-							name="subject"
-							class="footer__input"
-							placeholder="Subject"
-							required
-						/>
-						<input
-							type="email"
-							name="email"
-							class="footer__input"
-							placeholder="Your Email here"
-							required
-						/>
-						<input type="text" name="message" class="footer__input" placeholder="Drop Message" />
+					<form class="form" action="#">
+						<input type="text" name="subject" class="input" placeholder="Subject" required />
+						<input type="email" name="email" class="input" placeholder="Your Email here" required />
+						<input type="text" name="message" class="input" placeholder="Drop Message" />
 						<div class="divider"></div>
 						<button type="submit" name="submit" class="button submit__button">
 							<span>send us</span>
@@ -566,36 +553,20 @@ m-30 -349 c0 -10 -10 -15 -30 -15 -20 0 -30 5 -30 15 0 10 10 15 30 15 20 0
 			</div>
 		</footer>
 
-		<div class="popup">
-			<div class="popup__wrapper">
-				<div class="popup__content">
-					<form class="footer__form" action="#">
-						<input
-							type="text"
-							name="subject"
-							class="footer__input"
-							placeholder="Subject"
-							required
-						/>
-						<input
-							type="email"
-							name="email"
-							class="footer__input"
-							placeholder="Your Email here"
-							required
-						/>
-						<input type="text" name="message" class="footer__input" placeholder="Drop Message" />
-						<div class="divider"></div>
-						<button type="submit" name="submit" class="button submit__button">
-							<span>send us</span>
-						</button>
-					</form>
+		<div class="modal">
+			<div class="modal__content">
+				<div class="modal__close">
+					<span></span>
+					<span></span>
 				</div>
-			</div>
-			<div class="popup__close">
-				<span></span>
-				<span></span>
-				<span></span>
+				<form class="form" action="#">
+					<input type="text" name="subject" class="input" placeholder="Subject" required />
+					<input type="email" name class="input" placeholder="Your Email here" required />
+					<input type="text" name="message" class="input" placeholder="Drop Message" />
+					<button type="submit" name="submit" class="button submit__button">
+						<span>send us</span>
+					</button>
+				</form>
 			</div>
 		</div>
 

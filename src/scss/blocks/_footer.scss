@@ -4,30 +4,6 @@
 	margin: 0 auto;
 	padding: 166px 15px 100px;
 
-	&__form {
-		margin: 0 auto;
-		max-width: 570px;
-		display: flex;
-		flex-direction: column;
-
-		input {
-			margin-bottom: 55px;
-			border: none;
-			border-bottom: 2px solid $main-color;
-			padding: 20px 29px;
-
-			&:focus {
-				outline: none;
-			}
-
-			&::placeholder {
-				font-size: 24px;
-				color: rgba(42, 44, 47, 0.15);
-				font-weight: 500;
-			}
-		}
-	}
-
 	.divider {
 		width: 47px;
 		height: 11px;
@@ -104,39 +80,5 @@
 		right: 40px;
 		top: 120px;
 		height: 424px;
-	}
-}
-
-.submit__button {
-	margin-top: 17px;
-	border-color: $black-color;
-	padding: 0;
-	background-color: #fff;
-	cursor: pointer;
-
-	span {
-		color: $black-color;
-	}
-
-	&:hover {
-		transition: all 0.9s;
-		border-color: $main-color;
-
-		span {
-			transition: all 0.9s;
-			color: $main-color;
-
-			&::after {
-				transition: all 0.9s;
-				right: -65px;
-				width: 50px;
-				background-color: $black-color;
-			}
-
-			&::before {
-				transition: all 0.9s;
-				background-color: $black-color;
-			}
-		}
 	}
 }
