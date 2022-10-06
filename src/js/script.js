@@ -175,7 +175,7 @@ window.addEventListener("DOMContentLoaded", () => {
     unlockBody();
   }
 
-  closeModal();
+  // closeModal();
 
   function openModal() {
     modal.classList.add("show");
@@ -214,6 +214,54 @@ window.addEventListener("DOMContentLoaded", () => {
       top: 0,
       left: 0,
       behavior: "smooth",
+    });
+  });
+
+  // FORMS
+
+  const forms = document.querySelectorAll("form");
+
+  const message = {
+    loading: "Loading...",
+    success: "Done, thank you!",
+    failure: "Error, please, try later",
+  };
+
+  const postData = async (url, data) => {
+    let result = await fetch(url, {
+      method: "POST",
+      body: data,
+    });
+
+    return await result.text();
+  };
+
+  forms.forEach((form) => {
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+
+      let statusMessage = document.createElement("div");
+      statusMessage.style.margin = "5px auto 0";
+      form.append(statusMessage);
+      statusMessage.textContent = message.loading;
+
+      const formData = new FormData(form);
+
+      postData("server.php", formData)
+        .then((result) => {
+          console.log(result);
+          statusMessage.textContent = message.success;
+        })
+        .catch(() => {
+          statusMessage.textContent = message.failure;
+        })
+        .finally(() => {
+          form.reset();
+
+          setTimeout(() => {
+            statusMessage.remove();
+          }, 3000);
+        });
     });
   });
 });
