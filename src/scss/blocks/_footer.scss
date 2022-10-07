@@ -68,8 +68,9 @@
 			&:hover {
 				svg {
 					path {
-						fill: $main-color;
 						transition: all 0.6s;
+						fill: $main-color;
+						transform: rotate(360deg);
 					}
 				}
 			}
