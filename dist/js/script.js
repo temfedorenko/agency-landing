@@ -48,8 +48,8 @@ window.addEventListener('DOMContentLoaded', () => {
 		}
 	});
 
-	menuItems.forEach((item) => {
-		item.addEventListener('click', (e) => {
+	menuItems.forEach(item => {
+		item.addEventListener('click', e => {
 			if (e.target && e.target.matches('.menu__link')) {
 				closeBurgerMenu();
 			}
@@ -80,11 +80,11 @@ window.addEventListener('DOMContentLoaded', () => {
 		tabsContent = document.querySelectorAll('.portfolio__content-item');
 
 	function hideTabsContent() {
-		tabsContent.forEach((tabContent) => {
+		tabsContent.forEach(tabContent => {
 			tabContent.classList.remove('active-tab-content');
 		});
 
-		tabs.forEach((tab) => {
+		tabs.forEach(tab => {
 			tab.classList.remove('active-tab');
 		});
 	}
@@ -98,7 +98,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
 	showTabContant();
 
-	tabsWrapper.addEventListener('click', (e) => {
+	tabsWrapper.addEventListener('click', e => {
 		if (e.target && e.target.matches('.portfolio__tab')) {
 			tabs.forEach((tab, i) => {
 				if (e.target === tab) {
@@ -118,15 +118,15 @@ window.addEventListener('DOMContentLoaded', () => {
 		testimonialContent = document.querySelectorAll('.testimonial__content');
 
 	function hideTestimonialContent() {
-		testimonialContent.forEach((item) => {
+		testimonialContent.forEach(item => {
 			item.classList.remove('testimonial__content-active');
 		});
 
-		dotsDesctop.forEach((dot) => {
+		dotsDesctop.forEach(dot => {
 			dot.classList.remove('active-dot');
 		});
 
-		dotsMobile.forEach((dot) => {
+		dotsMobile.forEach(dot => {
 			dot.classList.remove('active-dot');
 		});
 	}
@@ -142,7 +142,7 @@ window.addEventListener('DOMContentLoaded', () => {
 	showTestimonialContent();
 
 	function addListener(wrapper, dots, dotsSelector) {
-		wrapper.addEventListener('click', (e) => {
+		wrapper.addEventListener('click', e => {
 			if (e.target && e.target.matches(dotsSelector)) {
 				dots.forEach((dot, i) => {
 					if (e.target === dot) {
@@ -179,18 +179,18 @@ window.addEventListener('DOMContentLoaded', () => {
 		lockBody();
 	}
 
-	modalTrigger.addEventListener('click', (e) => {
+	modalTrigger.addEventListener('click', e => {
 		e.preventDefault();
 		openModal();
 	});
 
-	body.addEventListener('keydown', (e) => {
+	body.addEventListener('keydown', e => {
 		if (e.code === 'Escape' && modal.classList.contains('show')) {
 			closeModal();
 		}
 	});
 
-	modal.addEventListener('click', (e) => {
+	modal.addEventListener('click', e => {
 		console.log(e.target);
 		if (e.target === modal || e.target.closest('.modal__close')) {
 			closeModal();
@@ -201,7 +201,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
 	const pageUp = document.querySelector('.page-up');
 
-	pageUp.addEventListener('click', (e) => {
+	pageUp.addEventListener('click', e => {
 		e.preventDefault();
 
 		window.scrollTo({
@@ -230,8 +230,8 @@ window.addEventListener('DOMContentLoaded', () => {
 		return await result.text();
 	};
 
-	forms.forEach((form) => {
-		form.addEventListener('submit', (e) => {
+	forms.forEach(form => {
+		form.addEventListener('submit', e => {
 			e.preventDefault();
 
 			let statusMessage = document.createElement('div');
@@ -243,7 +243,7 @@ window.addEventListener('DOMContentLoaded', () => {
 			const formData = new FormData(form);
 
 			postData('server.php', formData)
-				.then((result) => {
+				.then(result => {
 					console.log(result);
 					form.classList.remove('_sending');
 					statusMessage.textContent = message.success;
